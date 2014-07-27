@@ -34,10 +34,10 @@ public class FizzBuzzTest {
 	@Test
 	public void shouldCheckAllNumbersTo15() {
 
-		for (int i = 1; i <= numbers.size(); i++) {
-			String result = fizz.speak(i);
+		for (int number = 1; number <= numbers.size(); number++) {
+			String result = fizz.speak(number);
 			System.out.println(result);
-			assertEquals(numbers.get(i - 1), result);
+			assertEquals(numbers.get(number - 1), result);
 		}
 
 	}
