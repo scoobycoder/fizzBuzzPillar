@@ -33,5 +33,18 @@ public class FizzBuzzTest {
 		assertEquals("Buzz", fizz.speak(5));
 	}
 	
+	@Test
+	public void shouldReturnFizzForMultipleOf3() {
+		assertEquals("Fizz", fizz.speak(9));
+	}
 	
+	@Test
+	public void shouldReturnBuzzForMultipleOf5() {
+		assertEquals("Buzz", fizz.speak(10));
+	}
+	
+	@Test
+	public void shouldReturnFizzBuzzForMultiplesOf3And5() {
+		assertEquals("FizzBuzz", fizz.speak(15));
+	}
 }
