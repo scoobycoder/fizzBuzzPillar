@@ -2,21 +2,18 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 
 public class FizzBuzzTest {
 	private FizzBuzzer fizz;
+	private List<String> numbers;
 
 	@Before
 	public void setup() {
 		fizz = new FizzBuzzer();
-	}
-
-	@Test
-	public void shouldCheckAllNumbersTo15() {
-		List<String> numbers = new ArrayList<String>();
+		numbers = new ArrayList<String>();
+		
 		numbers.add("1");
 		numbers.add("2");
 		numbers.add("Fizz");
@@ -32,6 +29,10 @@ public class FizzBuzzTest {
 		numbers.add("13");
 		numbers.add("14");
 		numbers.add("FizzBuzz");
+	}
+
+	@Test
+	public void shouldCheckAllNumbersTo15() {
 
 		for (int i = 1; i <= numbers.size(); i++) {
 			String result = fizz.speak(i);
@@ -40,4 +41,5 @@ public class FizzBuzzTest {
 		}
 
 	}
+
 }
