@@ -1,7 +1,7 @@
 
 public class FizzBuzzer {
 
-	public Object speak(Integer number) {
+	public String speak(Integer number) {
 		if (number % 3 == 0 && number % 5 == 0)
 			return "FizzBuzz";
 		if (number % 3 == 0)
