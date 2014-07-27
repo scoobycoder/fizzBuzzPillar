@@ -1,9 +1,10 @@
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.junit.Before;
+import org.junit.Test;
 
 public class FizzBuzzTest {
 	private FizzBuzzer fizz;
@@ -12,39 +13,31 @@ public class FizzBuzzTest {
 	public void setup() {
 		fizz = new FizzBuzzer();
 	}
-	
+
 	@Test
-	public void shouldReturn1For1() {
-		assertEquals("1", fizz.speak(1));
-	}
-	
-	@Test
-	public void shouldReturn2For2() {
-		assertEquals("2", fizz.speak(2));
-	}
-	
-	@Test
-	public void shouldReturnFizzFor3() {
-		assertEquals("Fizz", fizz.speak(3));
-	}
-	
-	@Test
-	public void shouldReturnBuzzFor5() {
-		assertEquals("Buzz", fizz.speak(5));
-	}
-	
-	@Test
-	public void shouldReturnFizzForMultipleOf3() {
-		assertEquals("Fizz", fizz.speak(9));
-	}
-	
-	@Test
-	public void shouldReturnBuzzForMultipleOf5() {
-		assertEquals("Buzz", fizz.speak(10));
-	}
-	
-	@Test
-	public void shouldReturnFizzBuzzForMultiplesOf3And5() {
-		assertEquals("FizzBuzz", fizz.speak(15));
+	public void shouldCheckAllNumbersTo15() {
+		List<String> numbers = new ArrayList<String>();
+		numbers.add("1");
+		numbers.add("2");
+		numbers.add("Fizz");
+		numbers.add("4");
+		numbers.add("Buzz");
+		numbers.add("Fizz");
+		numbers.add("7");
+		numbers.add("8");
+		numbers.add("Fizz");
+		numbers.add("Buzz");
+		numbers.add("11");
+		numbers.add("Fizz");
+		numbers.add("13");
+		numbers.add("14");
+		numbers.add("FizzBuzz");
+
+		for (int i = 1; i <= numbers.size(); i++) {
+			String result = fizz.speak(i);
+			System.out.println(result);
+			assertEquals(numbers.get(i - 1), result);
+		}
+
 	}
 }
